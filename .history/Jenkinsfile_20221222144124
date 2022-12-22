@@ -4,7 +4,7 @@ pipeline {
         // that you want to use to run the pipeline
         node {
             // Install Node.js on the build agent if necessary
-            label 'OTORIO-SITE'
+            label 'my-build-agent'
         }
     }
     stages {
