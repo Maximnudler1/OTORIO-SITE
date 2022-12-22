@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "test": "node_modules/.bin/cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashboard": "npx cypress run --record --key cb50b1c0-d134-4b22-b5d6-05789961f77f",
+    "cyspec": "cypress run recordDashboard -- --spec"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.7.4"
+  },
+  "devDependencies": {
+    "cypress": "^12.2.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-image-diff-js": "^1.22.0"
+  }
+}
