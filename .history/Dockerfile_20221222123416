@@ -1,19 +1,16 @@
 FROM cypress/base:18.12.1
 
 # make new dir
-RUN mkdir -p usr/src/app
-
+RUN mkdir /app
+#set up /app as working dir
+WORKDIR /app
 
 # copy all file to docker image dir(app)
 # sorce>destantion 
-COPY . usr/src/app
-
-WORKDIR usr/src/app
-
-RUN npm install 
+COPY . /app
 
 RUN npm install --save-dev cypress
 
 RUN $(npm bin)/cypress verify
 
-ENTRYPOINT ["npm","run","recordDashboard"]
+RUN ["npm","run","recordDashboard"]
